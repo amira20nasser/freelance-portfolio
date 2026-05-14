@@ -5,6 +5,9 @@ A modern, responsive personal portfolio template designed for frontend developer
 ## Demo
 
 ![Portfolio Demo](./GIF.gif) <!-- Replace with your actual demo GIF -->
+![Demo](./mobile.jpeg)
+![Demo](./lWebsite.jpeg)
+![Demo](./dWebsite.jpeg)
 
 ## Features
 
