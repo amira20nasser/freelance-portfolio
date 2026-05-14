@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480" fill="none" role="img" aria-labelledby="t2">
+  <title id="t2">Project placeholder  travel</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="800" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#sky)"/>
+  <path d="M0 320 L200 220 L400 280 L600 200 L800 260 V480 H0 Z" fill="#0c4a6e" fill-opacity="0.6"/>
+  <rect x="120" y="160" width="560" height="200" rx="16" fill="white" fill-opacity="0.15"/>
+  <rect x="160" y="200" width="200" height="16" rx="4" fill="white" fill-opacity="0.9"/>
+  <rect x="160" y="232" width="320" height="12" rx="4" fill="white" fill-opacity="0.5"/>
+  <rect x="160" y="288" width="120" height="40" rx="8" fill="white"/>
+</svg>

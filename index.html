@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Personal portfolio — creative developer and designer. Customize this template for your freelance profile."
+    />
+    <title>Amira Nasser — Portfolio Template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+  <body
+    class="bg-slate-50 text-slate-800 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100"
+  >
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-brand-600 focus:px-4 focus:py-2 focus:text-white"
+      >Skip to main content</a
+    >
+
+    <!-- ========== Navbar ========== -->
+    <header
+      class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md transition-colors dark:border-slate-800/80 dark:bg-slate-950/80"
+    >
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Primary">
+        <a
+          href="#hero"
+          class="font-display text-xl font-semibold tracking-tight text-slate-900 transition hover:text-brand-600 dark:text-white dark:hover:text-brand-400"
+        >
+          Amira<span class="text-brand-600 dark:text-brand-400">.</span>
+        </a>
+
+        <!-- Desktop links -->
+        <ul class="hidden items-center gap-8 md:flex" id="desktop-nav">
+          <li><a href="#about" class="nav-link text-sm font-medium">About</a></li>
+          <li><a href="#skills" class="nav-link text-sm font-medium">Skills</a></li>
+          <li><a href="#projects" class="nav-link text-sm font-medium">Projects</a></li>
+          <li><a href="#services" class="nav-link text-sm font-medium">Services</a></li>
+          <li><a href="#contact" class="nav-link text-sm font-medium">Contact</a></li>
+        </ul>
+
+        <div class="flex items-center gap-3">
+          <button
+            type="button"
+            id="theme-toggle"
+            class="btn-icon"
+            aria-label="Toggle dark mode"
+            title="Toggle theme"
+          >
+            <span class="icon-sun hidden dark:inline" aria-hidden="true">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                />
+              </svg>
+            </span>
+            <span class="icon-moon inline dark:hidden" aria-hidden="true">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+                />
+              </svg>
+            </span>
+          </button>
+
+          <button
+            type="button"
+            id="menu-toggle"
+            class="btn-icon md:hidden"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Open menu"
+          >
+            <svg class="h-6 w-6 menu-open-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <svg class="menu-close-icon hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile menu panel -->
+      <div
+        id="mobile-menu"
+        class="mobile-menu-animated mobile-menu--collapsed border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950 md:hidden"
+        aria-hidden="true"
+      >
+        <div class="mobile-menu-inner px-4 py-4">
+          <ul class="flex flex-col gap-1">
+            <li>
+              <a href="#about" class="mobile-nav-link block rounded-lg px-3 py-3 text-base font-medium">About</a>
+            </li>
+            <li>
+              <a href="#skills" class="mobile-nav-link block rounded-lg px-3 py-3 text-base font-medium">Skills</a>
+            </li>
+            <li>
+              <a href="#projects" class="mobile-nav-link block rounded-lg px-3 py-3 text-base font-medium">Projects</a>
+            </li>
+            <li>
+              <a href="#services" class="mobile-nav-link block rounded-lg px-3 py-3 text-base font-medium">Services</a>
+            </li>
+            <li>
+              <a href="#contact" class="mobile-nav-link block rounded-lg px-3 py-3 text-base font-medium">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- ========== Hero ========== -->
+      <section
+        id="hero"
+        class="relative overflow-hidden border-b border-slate-200/60 bg-gradient-to-b from-white to-slate-50 dark:border-slate-800/60 dark:from-slate-950 dark:to-slate-900"
+        aria-labelledby="hero-heading"
+      >
+        <div class="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full bg-brand-500/10 blur-3xl dark:bg-brand-500/20"></div>
+        <div class="pointer-events-none absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl dark:bg-emerald-500/15"></div>
+
+        <div class="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-32">
+          <p class="animate-fade-up text-sm font-semibold uppercase tracking-widest text-brand-600 opacity-0 [animation-delay:50ms] dark:text-brand-400">
+            Available for freelance
+          </p>
+          <h1
+            id="hero-heading"
+            class="animate-fade-up mt-4 font-display text-4xl font-bold tracking-tight text-slate-900 opacity-0 [animation-delay:150ms] dark:text-white sm:text-5xl lg:text-6xl"
+          >
+            Hi, I’m <span class="text-brand-600 dark:text-brand-400">Amira Nasser</span>
+          </h1>
+          <p class="animate-fade-up mt-4 max-w-xl text-lg text-slate-600 opacity-0 [animation-delay:250ms] dark:text-slate-400 sm:text-xl">
+            Frontend developer &amp; UI designer crafting fast, accessible web experiences. Replace this copy with your
+            own story.
+          </p>
+          <div class="animate-fade-up mt-10 flex flex-wrap gap-4 opacity-0 [animation-delay:350ms]">
+            <a href="#contact" class="btn-primary"> Let’s work together </a>
+            <a href="#projects" class="btn-secondary"> View projects </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== About ========== -->
+      <section id="about" class="section-padding bg-white dark:bg-slate-950" aria-labelledby="about-heading">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <header class="section-header reveal-stagger">
+            <p class="reveal-child text-sm font-semibold uppercase tracking-widest text-brand-600 dark:text-brand-400">About</p>
+            <h2 id="about-heading" class="reveal-child section-title">A little about me</h2>
+            <p class="reveal-child section-subtitle">
+              Swap the image and text below. This block is ideal for your background, values, and what clients can
+              expect.
+            </p>
+          </header>
+
+          <div class="mt-14 grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div class="reveal-on-scroll order-2 lg:order-1">
+              <figure class="relative">
+                <div class="absolute -inset-4 rounded-2xl bg-gradient-to-br from-brand-500/20 to-emerald-500/20 blur-2xl"></div>
+                <img
+                  src="assets/profile-placeholder.svg"
+                  width="560"
+                  height="560"
+                  alt="Portrait placeholder — replace with your photo"
+                  class="relative w-full max-w-md rounded-2xl border border-slate-200/80 shadow-xl dark:border-slate-700/80 lg:max-w-none"
+                />
+              </figure>
+            </div>
+            <div class="reveal-on-scroll order-1 space-y-6 lg:order-2">
+              <p class="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+                I specialize in turning complex ideas into clean interfaces. Over the past several years I’ve partnered
+                with startups and agencies to ship marketing sites, dashboards, and design systems.
+              </p>
+              <p class="leading-relaxed text-slate-600 dark:text-slate-400">
+                When I’m not coding, I’m sketching layouts, exploring typography, or contributing to open source. Based in
+                <strong class="font-medium text-slate-800 dark:text-slate-200">San Francisco</strong> — open to remote
+                collaborations worldwide.
+              </p>
+              <ul class="grid gap-3 sm:grid-cols-2">
+                <li class="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 dark:border-slate-800 dark:bg-slate-900">
+                  <img src="assets/icon-check.svg" alt="" class="h-5 w-5 shrink-0" width="20" height="20" />
+                  <span class="text-sm font-medium">Performance-first builds</span>
+                </li>
+                <li class="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 dark:border-slate-800 dark:bg-slate-900">
+                  <img src="assets/icon-check.svg" alt="" class="h-5 w-5 shrink-0" width="20" height="20" />
+                  <span class="text-sm font-medium">Accessible components</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== Skills ========== -->
+      <section id="skills" class="section-padding border-y border-slate-200/80 bg-slate-50 dark:border-slate-800 dark:bg-slate-900/50" aria-labelledby="skills-heading">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <header class="section-header reveal-stagger">
+            <p class="reveal-child text-sm font-semibold uppercase tracking-widest text-brand-600 dark:text-brand-400">Skills</p>
+            <h2 id="skills-heading" class="reveal-child section-title">Tools I work with</h2>
+            <p class="reveal-child section-subtitle">
+              Edit the skill cards and progress values in HTML, or wire them to your CMS later.
+            </p>
+          </header>
+
+          <div class="reveal-stagger-group mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <article class="card reveal-stagger-item">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-100 text-brand-700 dark:bg-brand-500/20 dark:text-brand-300">
+                <img src="assets/icon-code.svg" alt="" width="24" height="24" />
+              </div>
+              <h3 class="mt-4 font-display text-lg font-semibold">HTML &amp; CSS</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Semantic markup, responsive layouts, animations.</p>
+              <div class="progress-bar mt-4" role="presentation">
+                <div class="progress-bar-fill" data-width="95"></div>
+              </div>
+              <span class="mt-1 text-xs font-medium text-slate-500 dark:text-slate-500">95%</span>
+            </article>
+
+            <article class="card reveal-stagger-item">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-300">
+                <img src="assets/icon-js.svg" alt="" width="24" height="24" />
+              </div>
+              <h3 class="mt-4 font-display text-lg font-semibold">JavaScript</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">ES modules, DOM APIs, fetch, small utilities.</p>
+              <div class="progress-bar mt-4" role="presentation">
+                <div class="progress-bar-fill" data-width="90"></div>
+              </div>
+              <span class="mt-1 text-xs font-medium text-slate-500">90%</span>
+            </article>
+
+            <article class="card reveal-stagger-item">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100 text-violet-700 dark:bg-violet-500/20 dark:text-violet-300">
+                <img src="assets/icon-react.svg" alt="" width="24" height="24" />
+              </div>
+              <h3 class="mt-4 font-display text-lg font-semibold">React</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Hooks, component libraries, state patterns.</p>
+              <div class="progress-bar mt-4" role="presentation">
+                <div class="progress-bar-fill" data-width="88"></div>
+              </div>
+              <span class="mt-1 text-xs font-medium text-slate-500">88%</span>
+            </article>
+
+            <article class="card reveal-stagger-item">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-300">
+                <img src="assets/icon-design.svg" alt="" width="24" height="24" />
+              </div>
+              <h3 class="mt-4 font-display text-lg font-semibold">UI Design</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Figma, design tokens, handoff to dev.</p>
+              <div class="progress-bar mt-4" role="presentation">
+                <div class="progress-bar-fill" data-width="82"></div>
+              </div>
+              <span class="mt-1 text-xs font-medium text-slate-500">82%</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== Projects ========== -->
+      <section id="projects" class="section-padding bg-white dark:bg-slate-950" aria-labelledby="projects-heading">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <header class="section-header reveal-stagger">
+            <p class="reveal-child text-sm font-semibold uppercase tracking-widest text-brand-600 dark:text-brand-400">Projects</p>
+            <h2 id="projects-heading" class="reveal-child section-title">Selected work</h2>
+            <p class="reveal-child section-subtitle">Three sample cards — duplicate the markup to add more case studies.</p>
+          </header>
+
+          <div class="mt-14 grid gap-8 lg:grid-cols-3">
+            <article class="project-card reveal-on-scroll group">
+              <a href="#" class="block overflow-hidden rounded-t-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950">
+                <img
+                  src="assets/project-1.svg"
+                  width="800"
+                  height="480"
+                  alt="Preview for Nova Analytics dashboard project"
+                  class="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </a>
+              <div class="p-6">
+                <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Nova Analytics</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                  Real-time dashboard with role-based views and exportable reports for a B2B SaaS client.
+                </p>
+                <div class="mt-4 flex flex-wrap gap-3">
+                  <a href="#" class="link-arrow text-sm font-medium text-brand-600 dark:text-brand-400">Live demo</a>
+                  <a href="#" class="link-arrow text-sm font-medium text-slate-600 dark:text-slate-400">Source</a>
+                </div>
+                <button
+                  type="button"
+                  class="btn-ghost"
+                  data-project-open
+                  data-project-title="Nova Analytics"
+                  data-project-description="Modular chart layer with streaming updates and export pipelines. Role-based access scopes sensitive metrics to the right teams."
+                  data-project-tags="React, TypeScript, D3, WebSockets"
+                >
+                  Project overview
+                  <span class="btn-ghost-icon" aria-hidden="true">→</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="project-card reveal-on-scroll group">
+              <a href="#" class="block overflow-hidden rounded-t-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950">
+                <img
+                  src="assets/project-2.svg"
+                  width="800"
+                  height="480"
+                  alt="Preview for Meridian Travel marketing site"
+                  class="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </a>
+              <div class="p-6">
+                <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Meridian Travel</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                  Marketing site with animated hero, CMS-driven stories, and localized pricing tables.
+                </p>
+                <div class="mt-4 flex flex-wrap gap-3">
+                  <a href="#" class="link-arrow text-sm font-medium text-brand-600 dark:text-brand-400">Case study</a>
+                  <a href="#" class="link-arrow text-sm font-medium text-slate-600 dark:text-slate-400">Live site</a>
+                </div>
+                <button
+                  type="button"
+                  class="btn-ghost"
+                  data-project-open
+                  data-project-title="Meridian Travel"
+                  data-project-description="Content-driven marketing site with localized pricing, editorial layouts, and a motion-forward hero that stays performant on low-end devices."
+                  data-project-tags="Next.js, Tailwind, Sanity CMS, i18n"
+                >
+                  Project overview
+                  <span class="btn-ghost-icon" aria-hidden="true">→</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="project-card reveal-on-scroll group">
+              <a href="#" class="block overflow-hidden rounded-t-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950">
+                <img
+                  src="assets/project-3.svg"
+                  width="800"
+                  height="480"
+                  alt="Preview for Pulse habit tracker app"
+                  class="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </a>
+              <div class="p-6">
+                <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Pulse</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                  Mobile-first PWA for habit tracking with offline support and gentle reminder notifications.
+                </p>
+                <div class="mt-4 flex flex-wrap gap-3">
+                  <a href="#" class="link-arrow text-sm font-medium text-brand-600 dark:text-brand-400">App store</a>
+                  <a href="#" class="link-arrow text-sm font-medium text-slate-600 dark:text-slate-400">GitHub</a>
+                </div>
+                <button
+                  type="button"
+                  class="btn-ghost"
+                  data-project-open
+                  data-project-title="Pulse"
+                  data-project-description="Offline-first PWA with streak tracking, gentle reminders, and a calm visual language designed for daily use without feeling noisy."
+                  data-project-tags="PWA, IndexedDB, Push API, Design system"
+                >
+                  Project overview
+                  <span class="btn-ghost-icon" aria-hidden="true">→</span>
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== Services ========== -->
+      <section id="services" class="section-padding border-t border-slate-200/80 bg-slate-50 dark:border-slate-800 dark:bg-slate-900/50" aria-labelledby="services-heading">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <header class="section-header reveal-stagger">
+            <p class="reveal-child text-sm font-semibold uppercase tracking-widest text-brand-600 dark:text-brand-400">Services</p>
+            <h2 id="services-heading" class="reveal-child section-title">How I can help</h2>
+            <p class="reveal-child section-subtitle">Package-style cards you can tune for your offerings and hourly or project rates.</p>
+          </header>
+
+          <div class="mt-14 grid gap-8 md:grid-cols-3">
+            <article class="service-card reveal-on-scroll">
+              <div class="service-icon-wrap">
+                <img src="assets/icon-layout.svg" alt="" width="28" height="28" />
+              </div>
+              <h3 class="mt-5 font-display text-lg font-semibold">UI development</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Pixel-perfect implementation from Figma, including responsive behavior and motion.
+              </p>
+              <p class="mt-4 text-sm font-semibold text-brand-600 dark:text-brand-400">From $800 / page</p>
+            </article>
+
+            <article class="service-card reveal-on-scroll border-brand-200 ring-2 ring-brand-500/20 dark:border-brand-500/30">
+              <div class="service-icon-wrap bg-brand-600 text-white dark:bg-brand-500">
+                <img src="assets/icon-stack.svg" alt="" width="28" height="28" class="brightness-0 invert" />
+              </div>
+              <h3 class="mt-5 font-display text-lg font-semibold">Full landing builds</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                End-to-end launch pages with forms, analytics hooks, and basic SEO setup.
+              </p>
+              <p class="mt-4 text-sm font-semibold text-brand-600 dark:text-brand-400">From $2,400 / project</p>
+            </article>
+
+            <article class="service-card reveal-on-scroll">
+              <div class="service-icon-wrap">
+                <img src="assets/icon-a11y.svg" alt="" width="28" height="28" />
+              </div>
+              <h3 class="mt-5 font-display text-lg font-semibold">Accessibility audit</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                WCAG-oriented review with prioritized fixes and component-level recommendations.
+              </p>
+              <p class="mt-4 text-sm font-semibold text-brand-600 dark:text-brand-400">From $500 / audit</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== Contact ========== -->
+      <section id="contact" class="section-padding bg-white dark:bg-slate-950" aria-labelledby="contact-heading">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div class="grid gap-14 lg:grid-cols-2 lg:items-start">
+            <div class="reveal-on-scroll">
+              <header>
+                <p class="text-sm font-semibold uppercase tracking-widest text-brand-600 dark:text-brand-400">Contact</p>
+                <h2 id="contact-heading" class="section-title mt-2 text-left">Tell me about your project</h2>
+                <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">
+                  Use the form for inquiries — wire it to Formspree, Netlify Forms, or your own API when you go live.
+                </p>
+              </header>
+              <address class="mt-8 not-italic">
+                <p class="text-sm font-semibold text-slate-900 dark:text-white">Email</p>
+                <a href="mailto:hello@example.com" class="mt-1 inline-block text-brand-600 hover:underline dark:text-brand-400">hello@example.com</a>
+                <p class="mt-6 text-sm font-semibold text-slate-900 dark:text-white">Location</p>
+                <p class="mt-1 text-slate-600 dark:text-slate-400">San Francisco, CA (remote-friendly)</p>
+              </address>
+            </div>
+
+            <form id="contact-form" class="card reveal-on-scroll space-y-5 p-6 sm:p-8" novalidate>
+              <div class="form-field">
+                <label for="name" class="form-label">Name <span class="text-red-500" aria-hidden="true">*</span></label>
+                <input type="text" id="name" name="name" class="form-input" autocomplete="name" required aria-required="true" />
+                <p class="form-error hidden text-sm text-red-600 dark:text-red-400" id="name-error" role="alert"></p>
+              </div>
+              <div class="form-field">
+                <label for="email" class="form-label">Email <span class="text-red-500" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" class="form-input" autocomplete="email" required aria-required="true" />
+                <p class="form-error hidden text-sm text-red-600 dark:text-red-400" id="email-error" role="alert"></p>
+              </div>
+              <div class="form-field">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" id="subject" name="subject" class="form-input" autocomplete="off" />
+              </div>
+              <div class="form-field">
+                <label for="message" class="form-label">Message <span class="text-red-500" aria-hidden="true">*</span></label>
+                <textarea id="message" name="message" rows="5" class="form-input resize-y" required aria-required="true"></textarea>
+                <p class="form-error hidden text-sm text-red-600 dark:text-red-400" id="message-error" role="alert"></p>
+              </div>
+              <p id="form-success" class="hidden rounded-lg bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-800 dark:bg-emerald-500/10 dark:text-emerald-300" role="status">
+                Thanks — your message validates successfully. Connect a backend to actually send mail.
+              </p>
+              <button type="submit" class="btn-primary w-full sm:w-auto">Send message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== Footer ========== -->
+    <footer class="border-t border-slate-200 bg-slate-50 py-12 dark:border-slate-800 dark:bg-slate-900/80" role="contentinfo">
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 px-4 sm:flex-row sm:px-6 lg:px-8">
+        <p class="text-center text-sm text-slate-600 dark:text-slate-400 sm:text-left">
+          © <span id="year"></span> Amira Nasser. Portfolio template — customize and resell with your own branding.
+        </p>
+        <ul class="flex items-center gap-4" aria-label="Social links">
+          <li>
+            <a href="https://github.com" class="footer-social" aria-label="GitHub (placeholder)">
+              <img src="assets/icon-github.svg" alt="" width="22" height="22" />
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com" class="footer-social" aria-label="LinkedIn (placeholder)">
+              <img src="assets/icon-linkedin.svg" alt="" width="22" height="22" />
+            </a>
+          </li>
+          <li>
+            <a href="https://dribbble.com" class="footer-social" aria-label="Dribbble (placeholder)">
+              <img src="assets/icon-dribbble.svg" alt="" width="22" height="22" />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com" class="footer-social" aria-label="X / Twitter (placeholder)">
+              <img src="assets/icon-twitter.svg" alt="" width="22" height="22" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <div id="project-modal" class="project-modal" hidden aria-hidden="true">
+      <div class="project-modal-backdrop" data-project-modal-close aria-hidden="true"></div>
+      <div
+        class="project-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-modal-title"
+        tabindex="-1"
+      >
+        <button
+          type="button"
+          id="project-modal-close"
+          class="project-modal-close"
+          data-project-modal-close
+          aria-label="Close project details"
+        >
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div class="p-6 pt-14 sm:p-8 sm:pt-16">
+          <h2 id="project-modal-title" class="pr-10 font-display text-xl font-semibold text-slate-900 dark:text-white"></h2>
+          <p id="project-modal-body" class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400"></p>
+          <div id="project-modal-tags" class="mt-5 flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/motion.js" defer></script>
+    <script src="js/dialog.js" defer></script>
+  </body>
+</html>

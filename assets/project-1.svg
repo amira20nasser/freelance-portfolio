@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480" fill="none" role="img" aria-labelledby="t1">
+  <title id="t1">Project placeholder analytics</title>
+  <rect width="800" height="480" fill="#0f172a"/>
+  <rect x="48" y="48" width="704" height="48" rx="8" fill="#1e293b"/>
+  <rect x="48" y="120" width="220" height="280" rx="12" fill="#312e81"/>
+  <rect x="292" y="120" width="460" height="132" rx="12" fill="#1e293b"/>
+  <rect x="292" y="276" width="220" height="124" rx="12" fill="#334155"/>
+  <rect x="532" y="276" width="220" height="124" rx="12" fill="#4338ca" fill-opacity="0.5"/>
+  <circle cx="640" cy="200" r="40" fill="#6366f1"/>
+</svg>

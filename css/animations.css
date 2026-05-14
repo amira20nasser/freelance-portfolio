@@ -1,0 +1,512 @@
+/**
+ * Motion layer — micro-interactions, modals, staggered reveals, menu transitions.
+ * Complements Tailwind utilities and css/style.css.
+ */
+
+/* ---------- Mobile menu panel ---------- */
+.mobile-menu-animated.mobile-menu--collapsed {
+  display: none;
+}
+
+.mobile-menu-animated:not(.mobile-menu--collapsed) {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.35s ease,
+    border-color 0.2s ease;
+}
+
+.mobile-menu-animated.mobile-menu--open:not(.mobile-menu--collapsed) {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.mobile-menu-animated .mobile-menu-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ---------- Section header stagger ---------- */
+.reveal-stagger .reveal-child {
+  opacity: 0;
+  transform: translateY(0.875rem);
+  transition:
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-stagger.is-visible .reveal-child {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger.is-visible .reveal-child:nth-child(1) {
+  transition-delay: 40ms;
+}
+
+.reveal-stagger.is-visible .reveal-child:nth-child(2) {
+  transition-delay: 110ms;
+}
+
+.reveal-stagger.is-visible .reveal-child:nth-child(3) {
+  transition-delay: 180ms;
+}
+
+/* ---------- Staggered cards (skills grid) ---------- */
+.reveal-stagger-group.is-visible .reveal-stagger-item:nth-child(1) {
+  transition-delay: 50ms;
+}
+
+.reveal-stagger-group.is-visible .reveal-stagger-item:nth-child(2) {
+  transition-delay: 110ms;
+}
+
+.reveal-stagger-group.is-visible .reveal-stagger-item:nth-child(3) {
+  transition-delay: 170ms;
+}
+
+.reveal-stagger-group.is-visible .reveal-stagger-item:nth-child(4) {
+  transition-delay: 230ms;
+}
+
+.reveal-stagger-item {
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-stagger-group:not(.is-visible) .reveal-stagger-item {
+  opacity: 0;
+  transform: translateY(1.25rem);
+}
+
+.reveal-stagger-group.is-visible .reveal-stagger-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Nav active indicator ---------- */
+.nav-link {
+  position: relative;
+}
+
+.nav-link.nav-link--active {
+  color: var(--brand-600);
+}
+
+.dark .nav-link.nav-link--active {
+  color: #818cf8;
+}
+
+.nav-link.nav-link--active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.35rem;
+  height: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--brand-500), var(--brand-600));
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 767px) {
+  .nav-link.nav-link--active::after {
+    display: none;
+  }
+}
+
+/* ---------- Buttons: micro-interactions ---------- */
+.btn-primary,
+.btn-secondary {
+  transition:
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.btn-primary:active,
+.btn-secondary:active {
+  transform: scale(0.97);
+}
+
+.btn-icon {
+  transition:
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-icon:hover {
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+}
+
+.btn-icon:active {
+  transform: scale(0.94);
+}
+
+.dark .btn-icon:hover {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- Ghost / text button (project modal trigger) ---------- */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--slate-600);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-ghost:hover {
+  color: var(--brand-600);
+  background-color: rgba(99, 102, 241, 0.08);
+}
+
+.btn-ghost:focus-visible {
+  outline: 2px solid var(--brand-500);
+  outline-offset: 2px;
+}
+
+.btn-ghost:active {
+  transform: scale(0.98);
+}
+
+.dark .btn-ghost {
+  color: var(--slate-400);
+}
+
+.dark .btn-ghost:hover {
+  color: #a5b4fc;
+  background-color: rgba(129, 140, 248, 0.12);
+}
+
+.btn-ghost .btn-ghost-icon {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-ghost:hover .btn-ghost-icon {
+  transform: translateX(3px);
+}
+
+/* ---------- Cards ---------- */
+.card {
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease,
+    border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.project-card {
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s ease,
+    border-color 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.service-card {
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease,
+    border-color 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+}
+
+/* ---------- Form inputs ---------- */
+.form-input {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.form-field:focus-within .form-label {
+  color: var(--brand-600);
+}
+
+.dark .form-field:focus-within .form-label {
+  color: #a5b4fc;
+}
+
+.form-input:focus {
+  transform: translateY(-1px);
+}
+
+/* ---------- Skill progress (width + shine; delays via --bar-delay from JS) ---------- */
+@keyframes progress-bar-shine {
+  0% {
+    transform: translateX(-130%) skewX(-12deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(220%) skewX(-12deg);
+    opacity: 0;
+  }
+}
+
+.progress-bar-fill {
+  position: relative;
+  width: 0;
+  overflow: hidden;
+  transition:
+    width 1.15s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s ease 0.85s;
+  transition-delay: var(--bar-delay, 0ms);
+}
+
+.progress-bar-fill::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: 0;
+  height: 120%;
+  width: 45%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 35%,
+    rgba(255, 255, 255, 0.42) 50%,
+    rgba(255, 255, 255, 0.1) 65%,
+    transparent 100%
+  );
+  pointer-events: none;
+  opacity: 0;
+}
+
+.dark .progress-bar-fill::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.04) 35%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(255, 255, 255, 0.06) 65%,
+    transparent 100%
+  );
+}
+
+.progress-bar-fill.is-filled {
+  width: var(--target-width, 0%);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.35);
+}
+
+.dark .progress-bar-fill.is-filled {
+  box-shadow: 0 0 14px rgba(129, 140, 248, 0.28);
+}
+
+.progress-bar-fill.is-filled::after {
+  animation: progress-bar-shine 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--bar-delay, 0ms) + 0.55s);
+}
+
+/* ---------- Modal ---------- */
+.project-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  pointer-events: none;
+}
+
+.project-modal[hidden] {
+  display: none;
+}
+
+.project-modal.is-open {
+  pointer-events: auto;
+}
+
+.project-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.45);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dark .project-modal-backdrop {
+  background-color: rgba(2, 6, 23, 0.72);
+}
+
+.project-modal.is-open .project-modal-backdrop {
+  opacity: 1;
+}
+
+.project-modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 28rem;
+  max-height: min(85vh, 32rem);
+  overflow: auto;
+  border-radius: 1rem;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background-color: var(--white);
+  box-shadow:
+    0 25px 50px -12px rgba(15, 23, 42, 0.2),
+    0 0 0 1px rgba(15, 23, 42, 0.03);
+  opacity: 0;
+  transform: translateY(14px) scale(0.98);
+  transition:
+    opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .project-modal-dialog {
+  border-color: rgba(51, 65, 85, 0.85);
+  background-color: var(--slate-900);
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.project-modal.is-open .project-modal-dialog {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.project-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: inline-flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: 1px solid var(--slate-200);
+  background-color: var(--slate-50);
+  color: var(--slate-600);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-modal-close:hover {
+  background-color: var(--white);
+  border-color: var(--slate-300);
+  color: var(--slate-900);
+}
+
+.project-modal-close:active {
+  transform: scale(0.94);
+}
+
+.project-modal-close:focus-visible {
+  outline: 2px solid var(--brand-500);
+  outline-offset: 2px;
+}
+
+.dark .project-modal-close {
+  border-color: var(--slate-700);
+  background-color: var(--slate-800);
+  color: var(--slate-300);
+}
+
+.dark .project-modal-close:hover {
+  background-color: var(--slate-700);
+  color: var(--white);
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu-animated:not(.mobile-menu--collapsed),
+  .mobile-menu-animated.mobile-menu--open:not(.mobile-menu--collapsed) {
+    transition: none;
+  }
+
+  .reveal-stagger .reveal-child,
+  .reveal-stagger.is-visible .reveal-child {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal-stagger-group:not(.is-visible) .reveal-stagger-item,
+  .reveal-stagger-group.is-visible .reveal-stagger-item {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .nav-link.nav-link--active::after {
+    transition: none;
+  }
+
+  .btn-primary:active,
+  .btn-secondary:active,
+  .btn-icon:active,
+  .btn-ghost:active,
+  .form-input:focus {
+    transform: none;
+  }
+
+  .card:hover,
+  .project-card:hover,
+  .service-card:hover {
+    transform: none;
+  }
+
+  .project-modal-backdrop,
+  .project-modal-dialog {
+    transition: none;
+  }
+
+  .project-modal.is-open .project-modal-dialog {
+    opacity: 1;
+    transform: none;
+  }
+
+  .btn-ghost:hover .btn-ghost-icon {
+    transform: none;
+  }
+
+  .progress-bar-fill::after {
+    animation: none !important;
+  }
+
+  .progress-bar-fill.is-filled {
+    box-shadow: none;
+  }
+
+  .progress-bar-fill {
+    transition-delay: 0ms !important;
+  }
+}
