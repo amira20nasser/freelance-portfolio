@@ -77,6 +77,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Contact
 
-Amira Nasser - [hello@example.com](mailto:hello@example.com)
-
-Project Link: [https://github.com/yourusername/portfolio](https://github.com/yourusername/portfolio)
+Amira Nasser - [amira20nasser@gmail.com](amira20nasser@gmail.com)
