@@ -1,4 +1,3 @@
-// Help me to type readme file for my project // contain GIF and some description about my project
 # Amira Nasser Portfolio
 
 A modern, responsive personal portfolio template designed for frontend developers and UI designers. Built with clean HTML, Tailwind CSS, and vanilla JavaScript, this template showcases your work with smooth animations, dark mode support, and accessibility features.
