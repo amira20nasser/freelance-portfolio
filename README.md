@@ -3,6 +3,7 @@
 A modern, responsive personal portfolio template designed for frontend developers and UI designers. Built with clean HTML, Tailwind CSS, and vanilla JavaScript, this template showcases your work with smooth animations, dark mode support, and accessibility features.
 
 ## Demo
+[https://amira20nasser.github.io/freelance-portfolio/](https://amira20nasser.github.io/freelance-portfolio/)
 
 ![Portfolio Demo](./GIF.gif) <!-- Replace with your actual demo GIF -->
 ![Demo](./mobile.jpeg)
@@ -80,6 +81,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Contact
 
-Amira Nasser - [hello@example.com](mailto:hello@example.com)
-
-Project Link: [https://github.com/yourusername/portfolio](https://github.com/yourusername/portfolio)
+Amira Nasser - [amira20nasser@gmail.com](amira20nasser@gmail.com)
